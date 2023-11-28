@@ -5,7 +5,7 @@ VisualStudioVersion = 17.7.34302.85
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "O-LoebREST", "O-LoebREST\O-LoebREST.csproj", "{25394491-282E-46D2-A534-2CB5F113C55E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "O-LoebRESTRESTTests", "O-LoebRESTRESTTests\O-LoebRESTRESTTests.csproj", "{C4667DB8-A95C-4D42-94C2-4B82863BAD2C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "O-LoebRESTRESTTests1", "O-LoebRESTRESTTests1\O-LoebRESTRESTTests1.csproj", "{8FD070AC-6B0C-4D83-BD59-1A6EC56CE126}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{25394491-282E-46D2-A534-2CB5F113C55E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{25394491-282E-46D2-A534-2CB5F113C55E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{25394491-282E-46D2-A534-2CB5F113C55E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C4667DB8-A95C-4D42-94C2-4B82863BAD2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C4667DB8-A95C-4D42-94C2-4B82863BAD2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C4667DB8-A95C-4D42-94C2-4B82863BAD2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C4667DB8-A95C-4D42-94C2-4B82863BAD2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FD070AC-6B0C-4D83-BD59-1A6EC56CE126}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FD070AC-6B0C-4D83-BD59-1A6EC56CE126}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FD070AC-6B0C-4D83-BD59-1A6EC56CE126}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FD070AC-6B0C-4D83-BD59-1A6EC56CE126}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
