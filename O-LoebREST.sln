@@ -5,7 +5,7 @@ VisualStudioVersion = 17.7.34302.85
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "O-LoebREST", "O-LoebREST\O-LoebREST.csproj", "{25394491-282E-46D2-A534-2CB5F113C55E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "O-LoebRESTRESTTests1", "O-LoebRESTRESTTests1\O-LoebRESTRESTTests1.csproj", "{8FD070AC-6B0C-4D83-BD59-1A6EC56CE126}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "O-LoebRESTRESTTests", "O-LoebRESTRESTTests1\O-LoebRESTRESTTests.csproj", "{8FD070AC-6B0C-4D83-BD59-1A6EC56CE126}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
