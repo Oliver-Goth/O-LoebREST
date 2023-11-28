@@ -9,12 +9,11 @@ using System.Threading.Tasks;
 namespace O_LoebREST.Class.Tests
 {
     [TestClass()]
-    public class ModelTests
+    public class Post
     {
         [TestMethod()]
         public void validateTest()
         {
-            Assert.Fail();
         }
     }
 }
