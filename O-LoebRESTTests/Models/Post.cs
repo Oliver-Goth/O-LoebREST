@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using O_LoebREST.Class;
+using O_LoebREST.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,103 @@ namespace O_LoebREST.Class.Tests
     [TestClass()]
     public class Post
     {
-        [TestMethod()]
-        public void validateTest()
+        Question Q10Char = new Question()
         {
+            Question = "hvad er 2 + 2 ?",
+            Awnsers = new List<string>() { "1", "2", "3", "4" },
+            CorrectAwsner = 2
+        };
+
+        [TestMethod()]
+        public void validateTest_no_false()
+        {
+            Post post = new Post()
+            {
+                Name = "ros",
+                CordidateNS = 50,
+                CordidateWE = 45,
+                PostQuestion = Q10Char
+            };
+
+            post.validate();
         }
+
+        [TestMethod()]
+        public void validateTest_false_name()
+        {
+            Post post = new Post()
+            {
+                Name = null,
+                CordidateNS = 50,
+                CordidateWE = 45,
+                PostQuestion = Q10Char
+            };
+
+            Assert.ThrowsException<ArgumentNullException>(() =>
+            post.validate());
+            post.Name = "";
+            Assert.ThrowsException<ArgumentNullException>(() =>
+            post.validate());
+
+        }
+
+        [TestMethod()]
+        public void validateTest_Cord_NS()
+        {
+            Post post = new Post()
+            {
+                Name = "ros",
+                //CordidateNS = 50,
+                CordidateWE = 45,
+                PostQuestion = Q10Char
+            };
+
+            Assert.ThrowsException<ArgumentNullException>(() =>
+            post.validate());
+
+            post.CordidateNS = 90;
+            post.validate();
+
+            post.CordidateNS = -90;
+            post.validate();
+
+            post.CordidateNS = 91;
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() =>
+            post.validate());
+
+            post.CordidateNS = -91;
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() =>
+            post.validate());
+        }
+
+        [TestMethod()]
+        public void validateTest_Cord_WE()
+        {
+            Post post = new Post()
+            {
+                Name = "ros",
+                CordidateNS = 50,
+                //CordidateWE = 45,
+                PostQuestion = Q10Char
+            };
+
+            Assert.ThrowsException<ArgumentNullException>(() =>
+            post.validate());
+
+            post.CordidateWE = 180;
+            post.validate();
+
+            post.CordidateWE = -180;
+            post.validate();
+
+            post.CordidateWE = 181;
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() =>
+            post.validate());
+
+            post.CordidateWE = -181;
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() =>
+            post.validate());
+        }
+
     }
 }

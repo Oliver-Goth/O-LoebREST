@@ -11,9 +11,13 @@ namespace O_LoebRESTTests.Models
     [TestClass()]
     public class RunTest
     {
-        // name tests
+        private const bool useDataBase = true;
 
         private readonly Run _testRun = new() { Id = 1, Name = "Katedral", RunType = "Oløb" };
+
+        
+
+        // name tests
         [TestMethod()]
         public void validateNameTest()
         {
@@ -66,7 +70,9 @@ namespace O_LoebRESTTests.Models
         [TestMethod()]
         public void validateListTest()
         {
-
+            Run testRun = new Run() { Id = 1, RunType = "Olob", Name = "ros tur", PostList = new() { new Posts { Name = "post", cordidateX = 59, cordidateY = 78 } };
+            Assert.IsNotNull(testRun);
+            Assert.IsNotNull(testRun.PostList);
         }
     }
 }
