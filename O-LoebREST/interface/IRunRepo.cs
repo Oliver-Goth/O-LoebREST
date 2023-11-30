@@ -1,6 +1,7 @@
-﻿namespace O_LoebREST.internal interface
+﻿using O_LoebREST.Models;
+
+public interface IRunRepo
 {
-    public interface IRunRepo
-{
+    void Add(Run run);
 }
-}
+

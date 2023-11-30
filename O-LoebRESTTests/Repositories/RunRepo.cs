@@ -16,7 +16,7 @@ namespace O_LoebREST.Class.Tests
     [TestClass()]
     public class Repositorytest
     {
-        private readonly RunRepo _runRepo = new() { Id = 1, Name = "Katedral", RunType = "Oløb" };
+        private readonly RunRepoDB _runRepo = new() { Id = 1, Name = "Katedral", RunType = "Oløb" };
 
         private const bool useDataBase = true;
         private static IRun _repo;
@@ -35,7 +35,7 @@ namespace O_LoebREST.Class.Tests
             }
             else
             {
-                _repo = new RunRepo();
+                _repo = new RunRepoDB();
             }
         }
 

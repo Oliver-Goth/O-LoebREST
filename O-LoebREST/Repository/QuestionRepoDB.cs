@@ -1,6 +1,6 @@
 ﻿namespace O_LoebREST.Repository
 {
-    public class QuestionRepo
+    public class QuestionRepoDB
     {
     }
 }
