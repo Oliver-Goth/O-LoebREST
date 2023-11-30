@@ -1,4 +1,5 @@
-﻿using O_LoebREST.DBContext;
+﻿using Microsoft.EntityFrameworkCore;
+using O_LoebREST.DBContext;
 using O_LoebREST.Models;
 
 namespace O_LoebREST.Repository
@@ -14,10 +15,15 @@ namespace O_LoebREST.Repository
         public void AddRun(Run run)
         {
             
-             run.ValidateName();
-             run.ValidateRunType();
-             _context.Add(run);
-             _context.SaveChanges();
+
+
+                run.ValidateName();
+                run.ValidateRunType();
+                _context.Runs.Add(run);
+                _context.SaveChanges();
+
+
+
             
         }
     }

@@ -43,9 +43,10 @@ namespace O_LoebREST.Class.Tests
         public void AddTest()
         {
 
-            Run runNameNull = new Run() { Id = 1, Name = null, RunType = "o-løb"};
-            Run runNameLongerThan40 = new Run() { Id = 2, Name = "abcdefstndhfjghfjsifjdasdfghiddjfrtasjcir", RunType = "o-løb" };
-            Run runTypeNull = new Run() { Id = 2, Name = "test", RunType = null };
+            Run runNameNull = new Run() { Id = 0, Name = null, RunType = "o-løb"};
+            Run runNameLongerThan40 = new Run() { Id = 0, Name = "abcdefstndhfjghfjsifjdasdfghiddjfrtasjcir", RunType = "o-løb" };
+            Run runTypeNull = new Run() { Id = 0, Name = "test", RunType = null };
+
 
             // Test if it throws agrumentnull ex
 
@@ -59,7 +60,6 @@ namespace O_LoebREST.Class.Tests
 
             Assert.ThrowsException<ArgumentNullException>(() => _repo.AddRun(runTypeNull));
 
-            
 
         }
 
