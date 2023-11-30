@@ -3,7 +3,7 @@ using O_LoebREST.Models;
 
 namespace O_LoebREST.DBContext
 {
-    public class DataBaseContext : Microsoft.EntityFrameworkCore.DbContext
+    public class DataBaseContext : DbContext
     {
         public DataBaseContext(DbContextOptions<DataBaseContext> options) : base(options)
         {

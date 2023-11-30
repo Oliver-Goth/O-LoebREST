@@ -27,7 +27,7 @@ namespace O_LoebREST.Class.Tests
         public static void InitOnce(TestContext context)
         {
             var optionsBuilder = new DbContextOptionsBuilder<DataBaseContext>();
-            optionsBuilder.UseSqlServer("connection string");
+            optionsBuilder.UseSqlServer("Data Source=mssql3.unoeuro.com;Initial Catalog=philipv_dk_db_solar;User ID=philipv_dk;Password=wa5pyrtbnRmHEh4fAg6k;Integrated Security=False;Encrypt=True;TrustServerCertificate=True");
 
             _dataBaseContext = new DataBaseContext(optionsBuilder.Options);
 
