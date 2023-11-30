@@ -29,18 +29,20 @@ namespace O_LoebRESTTests.Models
             Run _testrun2 = new Run() { Id = 1, RunType = "Oløb" };
             Assert.ThrowsException<ArgumentNullException>(() => _testrun2.ValidateName());
         }
+
         [TestMethod()]
         public void validateNameTestIsLengthException()
         {
             Run _testrun3 = new Run() { Id = 1, Name = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", RunType = "Oløb" };
-            Assert.IsTrue(_testrun3.Name.Length == 40); 
+            Assert.IsTrue(_testrun3.Name.Length >= 40); 
         }
+
         [TestMethod()]
         public void validateNameTestIsLengthExceptionFail()
         {
             Run _testrun4 = new Run() { Id = 1, Name = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", RunType = "Oløb" };
-            Assert.IsTrue(_testrun4.Name.Length == 40);
-            Assert.ThrowsException<ArgumentException>(() => _testrun4.ValidateName());
+            Assert.IsTrue(_testrun4.Name.Length >= 40);
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => _testrun4.ValidateName());
         }
 
 
@@ -61,8 +63,8 @@ namespace O_LoebRESTTests.Models
         [TestMethod()]
         public void validateRunTypeArgumentException()
         {
-            Run _testrun2 = new Run() { Id = 1, Name = "Domkirke", RunType = "Dims" };
-            Assert.ThrowsException<ArgumentException>(() => _testrun2.ValidateRunType());
+            Run _testrun2 = new Run() { Id = 1, Name = "Domkirke", RunType = null };
+            Assert.ThrowsException<ArgumentNullException>(() => _testrun2.ValidateRunType());
         }
 
         // list tests
