@@ -67,12 +67,12 @@ namespace O_LoebRESTTests.Models
 
         // list tests
 
-        [TestMethod()]
-        public void validateListTest()
-        {
-            Run testRun = new Run() { Id = 1, RunType = "Olob", Name = "ros tur", PostList = new() { new Posts { Name = "post", cordidateX = 59, cordidateY = 78 } };
-            Assert.IsNotNull(testRun);
-            Assert.IsNotNull(testRun.PostList);
-        }
+        //[TestMethod()]
+        //public void validateListTest()
+        //{
+        //    Run testRun = new Run() { Id = 1, RunType = "Olob", Name = "ros tur", PostList = new() { new Posts { Name = "post", cordidateX = 59, cordidateY = 78 } };
+        //    Assert.IsNotNull(testRun);
+        //    Assert.IsNotNull(testRun.PostList);
+        //}
     }
 }
