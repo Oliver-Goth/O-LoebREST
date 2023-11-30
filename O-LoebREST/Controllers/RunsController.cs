@@ -6,35 +6,35 @@ namespace O_LoebREST.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ModelsController : ControllerBase
+    public class RunsController : ControllerBase
     {
-        // GET: api/<ModelsController>
+        // GET: api/<RunsController>
         [HttpGet]
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
-        // GET api/<ModelsController>/5
+        // GET api/<RunsController>/5
         [HttpGet("{id}")]
         public string Get(int id)
         {
             return "value";
         }
 
-        // POST api/<ModelsController>
+        // POST api/<RunsController>
         [HttpPost]
         public void Post([FromBody] string value)
         {
         }
 
-        // PUT api/<ModelsController>/5
+        // PUT api/<RunsController>/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
-        // DELETE api/<ModelsController>/5
+        // DELETE api/<RunsController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
