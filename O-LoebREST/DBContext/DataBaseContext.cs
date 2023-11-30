@@ -3,9 +3,9 @@ using O_LoebREST.Models;
 
 namespace O_LoebREST.DBContext
 {
-    public class RunsDbContext : DbContext
+    public class DataBaseContext : Microsoft.EntityFrameworkCore.DbContext
     {
-        public RunsDbContext(DbContextOptions<RunsDbContext> options) : base(options)
+        public DataBaseContext(DbContextOptions<DataBaseContext> options) : base(options)
         {
 
         }

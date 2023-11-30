@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace O_LoebRESTTests.Models
 {
-    public class Question
+    public class QuestionTest
     {
 
 
         [TestMethod()]
         public void validateTest_Q()
         {
-            Question Q = new Question()
+            QuestionTest Q = new QuestionTest()
             {
                 //Question = "hvad er 2 + 2",
                 Awnsers = new List<String>() { "2", "3", "5", "4" },
@@ -43,7 +43,7 @@ namespace O_LoebRESTTests.Models
         [TestMethod()]
         public void validateTest_Awnsers_list()
         {
-            Question Q = new Question()
+            QuestionTest Q = new QuestionTest()
             {
                 Question = "hvad er 2 + 2",
                 //Awnsers = new List<String>() { "2", "3", "5", "4" },
@@ -69,7 +69,7 @@ namespace O_LoebRESTTests.Models
         [TestMethod()]
         public void validateTest_CorrectAwsner()
         {
-            Question Q = new Question()
+            QuestionTest Q = new QuestionTest()
             {
                 Question = "hvad er 2 + 2",
                 Awnsers = new List<String>() { "2", "3", "5", "4" },

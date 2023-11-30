@@ -2,6 +2,6 @@
 
 public interface IRunRepo
 {
-    void Add(Run run);
+    void AddRun(Run run);
 }
 

@@ -22,7 +22,7 @@
         {
             if (RunType == null)
             {
-                throw new ArgumentNullException(nameof(Name), "Name cannot be null");
+                throw new ArgumentNullException(nameof(Name), "Runtype cannot be null");
             }
         }
 

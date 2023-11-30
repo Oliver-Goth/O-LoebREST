@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace O_LoebRESTTests.Repositories
 {
-    public class PostRepo
+    public class QuestionRepoTest
     {
     }
 }

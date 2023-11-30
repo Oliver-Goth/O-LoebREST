@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace O_LoebREST.Class.Tests
 {
     [TestClass()]
-    public class Post
+    public class PostTest
     {
         Question Q10Char = new Question()
         {
@@ -22,7 +22,7 @@ namespace O_LoebREST.Class.Tests
         [TestMethod()]
         public void validateTest_no_false()
         {
-            Post post = new Post()
+            PostTest post = new PostTest()
             {
                 Name = "ros",
                 CordidateNS = 50,
@@ -36,7 +36,7 @@ namespace O_LoebREST.Class.Tests
         [TestMethod()]
         public void validateTest_false_name()
         {
-            Post post = new Post()
+            PostTest post = new PostTest()
             {
                 Name = null,
                 CordidateNS = 50,
@@ -55,7 +55,7 @@ namespace O_LoebREST.Class.Tests
         [TestMethod()]
         public void validateTest_Cord_NS()
         {
-            Post post = new Post()
+            PostTest post = new PostTest()
             {
                 Name = "ros",
                 //CordidateNS = 50,
@@ -84,7 +84,7 @@ namespace O_LoebREST.Class.Tests
         [TestMethod()]
         public void validateTest_Cord_WE()
         {
-            Post post = new Post()
+            PostTest post = new PostTest()
             {
                 Name = "ros",
                 CordidateNS = 50,
