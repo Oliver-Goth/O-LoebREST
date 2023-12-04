@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using O_LoebREST.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,6 +9,15 @@ namespace O_LoebREST.Controllers
     [ApiController]
     public class RunsController : ControllerBase
     {
+
+        private IRunRepo _runRepo;
+
+        public RunsController(IRunRepo runRepo)
+        {
+            _runRepo = runRepo;
+            
+        }
+
         // GET: api/<RunsController>
         [HttpGet]
         public IEnumerable<string> Get()
@@ -23,9 +33,28 @@ namespace O_LoebREST.Controllers
         }
 
         // POST api/<RunsController>
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [HttpPost]
-        public void Post([FromBody] string value)
+        public ActionResult<Run> Post([FromBody] Run newRun)
         {
+            try
+            {
+                Run addedRun = _runRepo.AddRun(newRun);
+                return Created("/" + addedRun.Id, addedRun);
+            }
+            catch (ArgumentNullException ex)
+            {
+                // Returns when name of run is null
+                return BadRequest(ex.Message);
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                // Returns when name of run is more than 40 characters
+                return BadRequest(ex.Message);
+            }
+
+
         }
 
         // PUT api/<RunsController>/5

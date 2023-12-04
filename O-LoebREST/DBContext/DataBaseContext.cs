@@ -11,6 +11,5 @@ namespace O_LoebREST.DBContext
         }
 
         public DbSet<Run> Runs { get; set; }
-        public DbSet<Run> RunsTests { get; set; }
     }
 }
