@@ -47,8 +47,6 @@ namespace O_LoebRESTTests.Models
 
 
         // type test
-
-
         [TestMethod()]
         public void validateRunTypeTest()
         {
@@ -68,7 +66,6 @@ namespace O_LoebRESTTests.Models
         }
 
         // list tests
-
         [TestMethod()]
         public void validateListTest()
         {
