@@ -1,11 +1,12 @@
 ﻿namespace O_LoebREST.Models
 {
-    public class Run
+    public class Posts
     {
-        public int Id { get; set; }
         public string Name { get; set; }
-        public string RunType { get; set; }
-        public List<Posts> PostList { get; set; }
+        public int SequenceNumber { get; set; }
+        public int Radius { get; set; }
+        public double GpsLatitude { get; set; }
+        public double GpsLongitude { get; set; }
 
         public void ValidateName()
         {
@@ -18,13 +19,5 @@
                 throw new ArgumentOutOfRangeException(nameof(Name), "Name cannot be longer than 40 characters");
             }
         }
-        public void ValidateRunType()
-        {
-            if (RunType == null)
-            {
-                throw new ArgumentNullException(nameof(Name), "Runtype cannot be null");
-            }
-        }
-
     }
 }
