@@ -41,9 +41,9 @@ namespace O_LoebREST.Class.Tests
         [TestMethod()]
         public void AddTest()
         {
-            Run runNameNull = new Run() { Id = 0, Name = null, RunType = "o-løb"};
-            Run runNameLongerThan40 = new Run() { Id = 0, Name = "abcdefstndhfjghfjsifjdasdfghiddjfrtasjcir", RunType = "o-løb" };
-            Run runTypeNull = new Run() { Id = 0, Name = "test", RunType = null };
+            Run runNameNull = new Run() { Id = 0, Name = null, RunType = "o-løb", PostRuns = new List<PostRun>() };
+            Run runNameLongerThan40 = new Run() { Id = 0, Name = "abcdefstndhfjghfjsifjdasdfghiddjfrtasjcir", RunType = "o-løb", PostRuns = new List<PostRun>() };
+            Run runTypeNull = new Run() { Id = 0, Name = "test", RunType = null, PostRuns = new List<PostRun>() };
 
             // Test if it throws agrumentnull ex
             Assert.ThrowsException<ArgumentNullException>(() => _repo.AddRun(runNameNull));

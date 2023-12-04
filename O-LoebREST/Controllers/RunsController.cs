@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using O_LoebREST.Models;
+using System.Text.Json.Serialization;
+using System.Text.Json;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,24 +14,29 @@ namespace O_LoebREST.Controllers
 
         private IRunRepo _runRepo;
 
-        public RunsController(IRunRepo runRepo, IPostRepo postRepo)
-        {
+        public RunsController(IRunRepo runRepo)
+        { 
             _runRepo = runRepo;
 
         }
 
-        // GET: api/<RunsController>
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
         // GET api/<RunsController>/5
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpGet("{id}")]
-        public string Get(int id)
+        public ActionResult<Run> Get(int id)
         {
-            return "value";
+            try
+            {
+
+                return Ok(_runRepo.GetRunById(id));
+
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex);
+            }
+            
         }
 
         // POST api/<RunsController>
@@ -57,16 +64,5 @@ namespace O_LoebREST.Controllers
 
         }
 
-        // PUT api/<RunsController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<RunsController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }
