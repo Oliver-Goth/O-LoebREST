@@ -12,15 +12,14 @@ namespace O_LoebREST.Repository
         {
             _context = DbContext;
         }
-        public void AddRun(Run run)
+        public Run AddRun(Run run)
         {
-            
+            run.ValidateName();
+            run.ValidateRunType();
+            _context.Runs.Add(run);
+            _context.SaveChanges();
 
-
-                run.ValidateName();
-                run.ValidateRunType();
-                _context.Runs.Add(run);
-                _context.SaveChanges();
+            return run;
 
             
         }
