@@ -1,11 +1,17 @@
-﻿namespace O_LoebREST.Models
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
+
+namespace O_LoebREST.Models
 {
     public class Run
     {
+        [Key]
         public int Id { get; set; }
         public string Name { get; set; }
         public string RunType { get; set; }
-        public List<Post> PostList { get; set; }
+        [JsonIgnore]
+        public List<PostRun> Posts { get; set; } = new List<PostRun>();
 
         public void ValidateName()
         {
