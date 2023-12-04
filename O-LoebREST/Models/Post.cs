@@ -13,7 +13,7 @@ namespace O_LoebREST.Models
         public int Radius { get; set; }
         public double GpsLatitude { get; set; }
         public double GpsLongitude { get; set; }
-        public ICollection<PostRun> PostRuns { get; set; } = new List<PostRun>();
+        public List<PostRun> PostRuns { get; set; }
 
 
         public void ValidateName()

@@ -32,24 +32,17 @@ namespace O_LoebREST.Repository
 
         public void AddPostToRun(int runID, List<int> postIds)
         {
-            // Looks in the db for a run with the given Id
-            Run runToAddPost = _context.Runs.Find(runID);
+            // Looks in the db for a run with the given Id and eagerly loads the PostRuns
+            Run runToAddPost = _context.Runs.FirstOrDefault(r => r.Id == runID);
 
             if (runToAddPost == null)
             {
                 throw new Exception($"The run with the {runID} was not found");
             }
 
-          
-            // Looks in the posts db to see if the post ID's is there and then selects them and making them to a list item
-            var validPostIds = _context.Posts
-                .Where(post => postIds.Contains(post.Id))
-                .Select(post => post.Id)
-                .ToList();
-
            
             // Adds the postId's to the runPosts on the Run id made before
-            runToAddPost.PostRuns = validPostIds.Select(postId => new PostRun { PostId = postId }).ToList();
+            runToAddPost.PostRuns = postIds.Select(postId => new PostRun { PostId = postId, RunId = runID }).ToList();
 
             _context.SaveChanges();
         }
