@@ -3,5 +3,6 @@
 public interface IRunRepo
 {
     Run AddRun(Run run);
+    Run GetRunById(int id);
 }
 

@@ -20,8 +20,13 @@ namespace O_LoebREST.Repository
             _context.SaveChanges();
 
             return run;
+        }
 
-            
+        public Run GetRunById(int id)
+        {
+            Run runToFind = _context.Runs.FirstOrDefault(run => run.Id == id);
+
+            return runToFind;
         }
     }
 }

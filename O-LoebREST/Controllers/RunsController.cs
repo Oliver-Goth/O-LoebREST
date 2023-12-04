@@ -12,10 +12,10 @@ namespace O_LoebREST.Controllers
 
         private IRunRepo _runRepo;
 
-        public RunsController(IRunRepo runRepo)
+        public RunsController(IRunRepo runRepo, IPostRepo postRepo)
         {
             _runRepo = runRepo;
-            
+
         }
 
         // GET: api/<RunsController>

@@ -11,11 +11,12 @@ namespace O_LoebREST.Controllers
     {
 
         private IPostRepo _postRepo;
+        private IRunRepo _runRepo;
 
-        public PostsController(IPostRepo postRepo)
+        public PostsController(IPostRepo postRepo, IRunRepo runRepo)
         {
             _postRepo = postRepo;
-            
+            _runRepo = runRepo;
         }
 
         // GET: api/<PostsController>
@@ -55,6 +56,24 @@ namespace O_LoebREST.Controllers
             }
 
 
+        }
+
+        // POST api/<PostsController>/5
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [HttpPost("{runId}/add-posts")]
+        public IActionResult AddPostsToRun(int runId, [FromBody] List<int> postIds)
+        {
+            Run run = _runRepo.GetRunById(runId);
+
+            if (run == null)
+            {
+                return NotFound($"Run with ID {runId} not found.");
+            }
+
+            _postRepo.AddPostToRun(runId, postIds);
+
+            return Ok($"Posts added to Run {runId} successfully.");
         }
 
         // PUT api/<PostsController>/5
