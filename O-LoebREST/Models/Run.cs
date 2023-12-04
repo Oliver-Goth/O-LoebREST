@@ -10,7 +10,7 @@ namespace O_LoebREST.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string RunType { get; set; }
-        public List<PostRun> PostRuns { get; set; } 
+        public ICollection<PostRun> PostRuns { get; set; } 
 
         public void ValidateName()
         {
