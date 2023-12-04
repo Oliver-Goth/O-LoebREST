@@ -49,7 +49,7 @@ namespace O_LoebREST.Repository
 
            
             // Adds the postId's to the runPosts on the Run id made before
-            runToAddPost.RunPosts = validPostIds.Select(postId => new PostRun { PostId = postId }).ToList();
+            runToAddPost.PostRuns = validPostIds.Select(postId => new PostRun { PostId = postId }).ToList();
 
             _context.SaveChanges();
         }

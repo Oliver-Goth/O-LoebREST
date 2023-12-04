@@ -15,7 +15,7 @@ namespace O_LoebREST.Models
         public double GpsLongitude { get; set; }
         // Hack for not showing the RunPosts list in the json
         [JsonIgnore]
-        public ICollection<PostRun> PostRuns { get; set; }
+        public IEnumerable<PostRun> PostRuns { get; set; }
 
 
         public void ValidateName()
