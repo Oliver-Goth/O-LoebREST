@@ -29,6 +29,9 @@ DataBaseContext _databaseContext = new(optionsBuilder.Options);
 // dependenci injecting RunRepo
 builder.Services.AddSingleton<IRunRepo>(new RunRepoDB(_databaseContext));
 
+// dependenci injecting PostRepo
+builder.Services.AddSingleton<IPostRepo>(new PostRepoDB(_databaseContext));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

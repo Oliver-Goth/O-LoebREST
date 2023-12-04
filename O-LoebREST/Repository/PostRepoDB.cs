@@ -3,7 +3,7 @@ using O_LoebREST.Models;
 
 namespace O_LoebREST.Repository
 {
-    public class PostRepoDB
+    public class PostRepoDB : IPostRepo
     {
         private readonly DataBaseContext _context;
 
