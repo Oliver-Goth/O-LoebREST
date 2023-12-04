@@ -72,7 +72,7 @@ namespace O_LoebRESTTests.Models
         [TestMethod()]
         public void validateListTest()
         {
-            Run testRun = new Run() { Id = 1, RunType = "Olob", Name = "ros tur", PostList = new() { new Posts { Name = "post", GpsLatitude = 59, GpsLongitude = 78 } } };
+            Run testRun = new Run() { Id = 1, RunType = "Olob", Name = "ros tur", PostList = new() { new Posts { Name = "post", SequenceNumber = 1, Radius = 10, GpsLatitude = 59, GpsLongitude = 78 } } };
             Assert.IsNotNull(testRun);
             Assert.IsNotNull(testRun.PostList);
         }
