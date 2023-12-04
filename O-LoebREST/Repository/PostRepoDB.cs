@@ -11,11 +11,13 @@ namespace O_LoebREST.Repository
         {
             _context = DbContext;
         }
-        public void AddPost(Post post)
+        public Post AddPost(Post post)
         {
             post.ValidateName();
             _context.Posts.Add(post);
             _context.SaveChanges();
+
+            return post;
         }
     }
 }

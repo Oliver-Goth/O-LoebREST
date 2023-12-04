@@ -2,6 +2,7 @@
 {
     public class Post
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public int SequenceNumber { get; set; }
         public int Radius { get; set; }
