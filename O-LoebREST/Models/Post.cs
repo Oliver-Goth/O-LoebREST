@@ -1,6 +1,6 @@
 ﻿namespace O_LoebREST.Models
 {
-    public class Posts
+    public class Post
     {
         public string Name { get; set; }
         public int SequenceNumber { get; set; }
