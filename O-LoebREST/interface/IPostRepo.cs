@@ -4,6 +4,6 @@ public interface IPostRepo
 {
     Post AddPost(Post post);
     Post GetPostById(int id);
-    void AddPostToRun(int runID, List<int> postIds);
+    void AddPostToRun(int runID, int postId);
 }
 

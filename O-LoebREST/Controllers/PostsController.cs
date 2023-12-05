@@ -48,8 +48,12 @@ namespace O_LoebREST.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpPost("{runId}/add-posts")]
-        public IActionResult AddPostsToRun(int runId, [FromBody] List<int> postIds)
+        public IActionResult AddPostsToRun(int runId, [FromBody] int postId)
         {
+
+            System.Diagnostics.Debug.WriteLine("postid: " +postId);
+
+
             Run run = _runRepo.GetRunById(runId);
 
             if (run == null)
@@ -57,7 +61,9 @@ namespace O_LoebREST.Controllers
                 return NotFound($"Run with ID {runId} not found.");
             }
 
-            _postRepo.AddPostToRun(runId, postIds);
+
+
+            _postRepo.AddPostToRun(runId, postId);
 
             return Ok($"Posts added to Run {runId} successfully.");
         }
