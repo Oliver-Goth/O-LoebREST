@@ -30,6 +30,16 @@ namespace O_LoebREST.Repository
             return postToFind;
         }
 
+        public IEnumerable<Post> GetAllPost()
+        {
+
+            IQueryable<Post> query = _context.Posts.AsQueryable();
+
+            return query;
+
+
+        }
+
         public void AddPostToRun(int runID, int postId)
         {
             // Looks in the db for a run with the given Id and eagerly loads the PostRuns

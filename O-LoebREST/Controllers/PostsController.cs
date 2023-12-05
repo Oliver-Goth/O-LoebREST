@@ -68,5 +68,22 @@ namespace O_LoebREST.Controllers
             return Ok($"Posts added to Run {runId} successfully.");
         }
 
+        // POST api/<PostsController>/5
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [HttpGet]
+        public IActionResult GetAllPosts()
+        {
+            IEnumerable<Post> postList = _postRepo.GetAllPost();
+
+            if (postList.Count() == 0)
+            {
+                return NoContent();
+            }
+
+            return Ok(postList);
+
+        }
+
     }
 }
