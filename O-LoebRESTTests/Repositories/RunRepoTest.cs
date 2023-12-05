@@ -31,7 +31,7 @@ namespace O_LoebREST.Class.Tests
 
             _dataBaseContext = new DataBaseContext(optionsBuilder.Options);
 
-            _dataBaseContext.Database.ExecuteSqlRaw("TRUNCATE TABLE dbo.Runs");
+            //_dataBaseContext.Database.ExecuteSqlRaw("TRUNCATE TABLE dbo.Runs");
 
             _repo = new RunRepoDB(_dataBaseContext);
 
