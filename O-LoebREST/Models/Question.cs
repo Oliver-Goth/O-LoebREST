@@ -1,21 +1,20 @@
 ﻿namespace O_LoebREST.Models
 {
-    public class QuizQuestion
+    public class Question
     {
-        public string Name { get; set; }
-        public string Question { get; set; }
-        public List<string> Answers { get; set; }
-        public bool IsAnswered { get; set; }
-        public int IsCorrect { get; set; }
         public int Id { get; set; }
+        public string Name { get; set; }
+        public string QuestionToAnswer { get; set; }
+        public bool IsAnswered { get; set; }
+        public int? PostId { get; set; }
 
         public void ValidateQuestion()
         {
-            if (Question == null)
+            if (QuestionToAnswer == null)
             {
                 throw new ArgumentNullException(nameof(Question), "Question cannot be null");
             }
-            if (Question.Length > 80)
+            if (QuestionToAnswer.Length > 80)
             {
                 throw new ArgumentOutOfRangeException(nameof(Question), "Question cannot be longer than 80 characters");
             }
