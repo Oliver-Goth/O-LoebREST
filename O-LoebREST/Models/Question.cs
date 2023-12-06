@@ -14,9 +14,9 @@
             {
                 throw new ArgumentNullException(nameof(Question), "Question cannot be null");
             }
-            if (QuestionToAnswer.Length > 80)
+            if (QuestionToAnswer.Length > 150)
             {
-                throw new ArgumentOutOfRangeException(nameof(Question), "Question cannot be longer than 80 characters");
+                throw new ArgumentOutOfRangeException(nameof(Question), "Question cannot be longer than 150 characters");
             }
         }
     }
