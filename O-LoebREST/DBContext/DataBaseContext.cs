@@ -12,5 +12,6 @@ namespace O_LoebREST.DBContext
 
         public DbSet<Run> Runs { get; set; }
         public DbSet<Post> Posts { get; set; }
+        public DbSet<QuizQuestion> QuizQuestions { get; set; }
     }
 }
