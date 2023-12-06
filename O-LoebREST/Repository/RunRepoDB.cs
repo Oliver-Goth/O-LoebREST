@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using O_LoebREST.DBContext;
 using O_LoebREST.Models;
 
@@ -25,9 +26,15 @@ namespace O_LoebREST.Repository
         public Run GetRunById(int id)
         {
             Run runToFind = _context.Runs.FirstOrDefault(run => run.Id == id);
-            
 
             return runToFind;
+        }
+
+        public IEnumerable<Run> GetAll()
+        {
+            IQueryable<Run> Send = _context.Runs.AsQueryable();
+
+            return Send;
         }
 
 

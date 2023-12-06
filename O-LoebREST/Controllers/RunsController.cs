@@ -40,6 +40,20 @@ namespace O_LoebREST.Controllers
             
         }
 
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [HttpGet]
+        public ActionResult<IEnumerable<Run>> GetAll()
+        {
+            try
+            {
+                return Ok(_runRepo.GetAll().AsQueryable());
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
         // POST api/<RunsController>
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

@@ -3,7 +3,7 @@ using O_LoebREST.Models;
 
 namespace O_LoebREST.Repository
 {
-    public class QuestionRepoDB
+    public class QuestionRepoDB : IQuestionRepo
     {
         private readonly DataBaseContext _context;
 
@@ -11,6 +11,15 @@ namespace O_LoebREST.Repository
         {
             _context = DbContext;
         }
+
+
+        public Question GetById(int id)
+        {
+            Question Send = _context.Questions.FirstOrDefault(Q => Q.Id == id);
+
+            return Send;
+        }
+
         public Question AddQuestion(Question question)
         {
             question.ValidateQuestion();
@@ -20,6 +29,14 @@ namespace O_LoebREST.Repository
             _context.SaveChanges();
 
             return question;
+        }
+
+        public IEnumerable<Question> GetAll()
+        {
+
+            IQueryable<Question> query = _context.Questions.AsQueryable();
+
+            return query;
         }
     }
 }

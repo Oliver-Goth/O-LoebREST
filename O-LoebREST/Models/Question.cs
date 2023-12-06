@@ -3,7 +3,6 @@
     public class Question
     {
         public int Id { get; set; }
-        public string Name { get; set; }
         public string QuestionToAnswer { get; set; }
         public bool IsAnswered { get; set; }
         public int? PostId { get; set; }

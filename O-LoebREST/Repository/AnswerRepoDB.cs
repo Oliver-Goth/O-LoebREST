@@ -21,5 +21,11 @@ namespace O_LoebREST.Repository
         {
             return _context.Answers.Where(a => a.QuestionId == questionId).ToList();
         }
+
+        public IEnumerable<Answer> GetAll()
+        {
+            return _context.Answers.AsQueryable();
+        }
+
     }
 }

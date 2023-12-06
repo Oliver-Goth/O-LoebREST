@@ -32,6 +32,8 @@ builder.Services.AddSingleton<IRunRepo>(new RunRepoDB(_databaseContext));
 // dependenci injecting PostRepo
 builder.Services.AddSingleton<IPostRepo>(new PostRepoDB(_databaseContext));
 
+builder.Services.AddSingleton<IQuestionRepo>(new QuestionRepoDB(_databaseContext));
+
 builder.Services.AddSingleton<IAnswerRepo>(new AnswerRepoDB(_databaseContext));
 
 var app = builder.Build();
