@@ -36,6 +36,8 @@ builder.Services.AddSingleton<IQuestionRepo>(new QuestionRepoDB(_databaseContext
 
 builder.Services.AddSingleton<IAnswerRepo>(new AnswerRepoDB(_databaseContext));
 
+builder.Services.AddSingleton<GPSLocationRepoDB>(new GPSLocationRepoDB(_databaseContext));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
