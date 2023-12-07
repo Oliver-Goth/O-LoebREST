@@ -11,7 +11,6 @@ namespace O_LoebREST.Controllers
     [ApiController]
     public class QuestionsController : ControllerBase
     {
-
         private IQuestionRepo _runRepo;
 
         public QuestionsController(IQuestionRepo QRepo)
@@ -35,8 +34,6 @@ namespace O_LoebREST.Controllers
             {
                 return BadRequest(ex.Message);
             }
-                
-            
         }
 
         // GET api/<QuestionsController>/5
