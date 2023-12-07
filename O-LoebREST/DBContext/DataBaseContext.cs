@@ -14,5 +14,6 @@ namespace O_LoebREST.DBContext
         public DbSet<Post> Posts { get; set; }
         public DbSet<Question> Questions { get; set; }
         public DbSet<Answer> Answers { get; set; }
+        public DbSet<GPSLocation> GPSLocations { get; set; }
     }
 }
