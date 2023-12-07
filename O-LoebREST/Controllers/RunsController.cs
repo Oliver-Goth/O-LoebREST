@@ -26,16 +26,12 @@ namespace O_LoebREST.Controllers
         {
             try
             {
-
                 return Ok(_runRepo.GetRunById(id));
-
-
             }
             catch (Exception ex)
             {
                 return NotFound(ex);
             }
-            
         }
 
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -73,9 +69,6 @@ namespace O_LoebREST.Controllers
                 // Returns when name of run is more than 40 characters
                 return BadRequest(ex.Message);
             }
-
-
         }
-
     }
 }

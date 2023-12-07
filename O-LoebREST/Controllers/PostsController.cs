@@ -9,7 +9,6 @@ namespace O_LoebREST.Controllers
     [ApiController]
     public class PostsController : ControllerBase
     {
-
         private IPostRepo _postRepo;
         private IRunRepo _runRepo;
 

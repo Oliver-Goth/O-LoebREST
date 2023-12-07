@@ -16,9 +16,7 @@ namespace O_LoebREST.Controllers
         public QuestionsController(IQuestionRepo QRepo)
         {
             _runRepo = QRepo;
-
         }
-
 
         // GET: api/<QuestionsController>
         [ProducesResponseType(StatusCodes.Status200OK)]
