@@ -26,6 +26,5 @@ namespace O_LoebREST.Repository
         {
             return _context.Answers.AsQueryable();
         }
-
     }
 }

@@ -40,8 +40,6 @@ namespace O_LoebREST.Controllers
                 // Returns when name of run is more than 40 characters
                 return BadRequest(ex.Message);
             }
-
-
         }
 
         // POST api/<PostsController>/5
@@ -50,9 +48,7 @@ namespace O_LoebREST.Controllers
         [HttpPost("{runId}/add-posts")]
         public IActionResult AddPostsToRun(int runId, [FromBody] int postId)
         {
-
             System.Diagnostics.Debug.WriteLine("postid: " +postId);
-
 
             Run run = _runRepo.GetRunById(runId);
 
@@ -60,8 +56,6 @@ namespace O_LoebREST.Controllers
             {
                 return NotFound($"Run with ID {runId} not found.");
             }
-
-
 
             _postRepo.AddPostToRun(runId, postId);
 
@@ -82,8 +76,6 @@ namespace O_LoebREST.Controllers
             }
 
             return Ok(postList);
-
         }
-
     }
 }

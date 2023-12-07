@@ -11,14 +11,12 @@ namespace O_LoebREST.Controllers
     [ApiController]
     public class AnswerController : ControllerBase
     {
-
         private IAnswerRepo _answerRepo;
 
         public AnswerController(IAnswerRepo answerRepo)
         {
             _answerRepo = answerRepo;
         }
-
 
         // GET: api/<AnswerController>
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -34,7 +32,6 @@ namespace O_LoebREST.Controllers
             {
                 return NotFound(ex);
             }
-
         }
 
         // GET api/<AnswerController>/5
@@ -51,7 +48,6 @@ namespace O_LoebREST.Controllers
             {
                 return NotFound(ex);
             }
-
         }
 
         // POST api/<AnswerController>

@@ -11,13 +11,11 @@ namespace O_LoebREST.Controllers
     [ApiController]
     public class RunsController : ControllerBase
     {
-
         private IRunRepo _runRepo;
 
         public RunsController(IRunRepo runRepo)
         { 
             _runRepo = runRepo;
-
         }
 
         // GET api/<RunsController>/5
