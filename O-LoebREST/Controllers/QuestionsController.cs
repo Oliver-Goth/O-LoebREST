@@ -58,6 +58,9 @@ namespace O_LoebREST.Controllers
         {
             try
             {
+                // "Hack" for setting isanswered to false, since its not working in the model class
+                newQuestion.IsAnswered = false;
+
                 Question addedQuestion = _runRepo.AddQuestion(newQuestion);
                 return Created("/" + addedQuestion.Id, addedQuestion);
             }
