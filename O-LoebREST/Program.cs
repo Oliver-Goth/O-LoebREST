@@ -20,6 +20,7 @@ builder.Services.AddCors(options =>
     });
 });
 
+
 // Adding database connection
 var optionsBuilder = new DbContextOptionsBuilder<DataBaseContext>();
 optionsBuilder.UseSqlServer("Data Source=mssql3.unoeuro.com;Initial Catalog=philipv_dk_db_solar;User ID=philipv_dk;Password=wa5pyrtbnRmHEh4fAg6k;Integrated Security=False;Encrypt=True;TrustServerCertificate=True");
