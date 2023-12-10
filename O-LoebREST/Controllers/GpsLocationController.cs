@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using O_LoebREST.Models;
-using System.Text.Json.Serialization;
-using System.Text.Json;
+using O_LoebREST.Repository;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -9,31 +8,30 @@ namespace O_LoebREST.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class GpsLocationController : ControllerBase
+    public class GPSLocationController : ControllerBase
     {
-        private IGpsLocationRepo _gpsLocationRepo;
-
-        public GpsLocationController(IGpsLocationRepo gpsLocationRepo)
+        private GPSLocationRepoDB _gpsLocationRepoDB;
+        public GPSLocationController(GPSLocationRepoDB gpsLocationRepoDB) 
         {
-            _gpsLocationRepo = gpsLocationRepo;
+            _gpsLocationRepoDB = gpsLocationRepoDB;
         }
 
-        // POST api/<GpsLocationController>
-        [ProducesResponseType(StatusCodes.Status201Created)]
+        // POST api/<GPSLocationController>
+        [ProducesResponseType(StatusCodes.Status202Accepted)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [HttpPost]
-        public ActionResult<GPSLocation> Post([FromBody] GPSLocation newGpsLocation)
+        public ActionResult Post([FromBody] GPSLocation newGPSLocation)
         {
             try
             {
-                GPSLocation addedGpsLocation = _gpsLocationRepo.AddGPSLocation(newGpsLocation);
-                return Created("/" + addedGpsLocation.Id, newGpsLocation);
+                newGPSLocation.ReceivedOn = DateTime.Now;
+                _gpsLocationRepoDB.AddGPSLocation(newGPSLocation);
+                return Accepted();
             }
-            catch (ArgumentException ex)
+            catch (Exception ex) 
             {
-                return BadRequest(ex);
+                return BadRequest(ex.Message);
             }
         }
-
     }
 }
