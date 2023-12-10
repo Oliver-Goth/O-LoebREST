@@ -20,7 +20,7 @@ namespace O_LoebREST.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [HttpPost]
-        public ActionResult Post([FromBody] GPSLocation newGPSLocation)
+        public ActionResult<GPSLocation> Post([FromBody] GPSLocation newGPSLocation)
         {
             try
             {
