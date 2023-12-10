@@ -36,7 +36,7 @@ builder.Services.AddSingleton<IQuestionRepo>(new QuestionRepoDB(_databaseContext
 
 builder.Services.AddSingleton<IAnswerRepo>(new AnswerRepoDB(_databaseContext));
 
-builder.Services.AddSingleton<GPSLocationRepoDB>(new GPSLocationRepoDB(_databaseContext));
+builder.Services.AddSingleton<IGpsLocationRepo>(new GPSLocationRepoDB(_databaseContext));
 
 var app = builder.Build();
 
