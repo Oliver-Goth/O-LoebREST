@@ -17,7 +17,7 @@ namespace O_LoebREST.Controllers
         }
 
         // POST api/<GPSLocationController>
-        [ProducesResponseType(StatusCodes.Status202Accepted)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [HttpPost]
         public ActionResult Post([FromBody] GPSLocation newGPSLocation)
@@ -26,7 +26,7 @@ namespace O_LoebREST.Controllers
             {
                 newGPSLocation.ReceivedOn = DateTime.Now;
                 _gpsLocationRepo.AddGPSLocation(newGPSLocation);
-                return Accepted();
+                return Created("/" + newGPSLocation.Id, newGPSLocation);
             }
             catch (Exception ex) 
             {
