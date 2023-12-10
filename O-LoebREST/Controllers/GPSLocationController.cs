@@ -10,10 +10,10 @@ namespace O_LoebREST.Controllers
     [ApiController]
     public class GPSLocationController : ControllerBase
     {
-        private GPSLocationRepoDB _gpsLocationRepoDB;
-        public GPSLocationController(GPSLocationRepoDB gpsLocationRepoDB) 
+        private IGpsLocationRepo _gpsLocationRepo;
+        public GPSLocationController(IGpsLocationRepo gpsLocationRepo) 
         {
-            _gpsLocationRepoDB = gpsLocationRepoDB;
+            _gpsLocationRepo = gpsLocationRepo;
         }
 
         // POST api/<GPSLocationController>
@@ -25,7 +25,7 @@ namespace O_LoebREST.Controllers
             try
             {
                 newGPSLocation.ReceivedOn = DateTime.Now;
-                _gpsLocationRepoDB.AddGPSLocation(newGPSLocation);
+                _gpsLocationRepo.AddGPSLocation(newGPSLocation);
                 return Accepted();
             }
             catch (Exception ex) 
