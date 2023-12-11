@@ -18,6 +18,22 @@ namespace O_LoebREST.Controllers
             _runRepo = runRepo;
         }
 
+        // Getbyid api/<PostsController>/
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [HttpGet]
+        public ActionResult<IEnumerable<Post>> GetAllRunId()
+        {
+            try
+            {
+                return Ok(_postRepo.GetAllRunId().AsQueryable());
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
         // POST api/<PostsController>
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

@@ -20,6 +20,12 @@ namespace O_LoebREST.Repository
             return post;
         }
 
+        public IEnumerable<Post> GetAllRunId()
+        {
+            IQueryable<Post> Send = _context.Posts.AsQueryable();
+            return Send;
+        }
+
         public Post GetPostById(int id)
         {
             Post postToFind = _context.Posts.FirstOrDefault(post => post.Id == id);
