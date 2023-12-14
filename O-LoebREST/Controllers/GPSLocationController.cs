@@ -25,12 +25,28 @@ namespace O_LoebREST.Controllers
             try
             {
                 newGPSLocation.ReceivedOn = DateTime.Now;
+                newGPSLocation.Id = 1;
                 _gpsLocationRepo.AddGPSLocation(newGPSLocation);
                 return Created("/" + newGPSLocation.Id, newGPSLocation);
             }
             catch (Exception ex) 
             {
                 return BadRequest(ex.Message);
+            }
+        }
+
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [HttpGet("{id}")]
+        public ActionResult<GPSLocation> Get(int id)
+        {
+            try
+            {
+                return Ok(_gpsLocationRepo.GetById(id));
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex);
             }
         }
     }
